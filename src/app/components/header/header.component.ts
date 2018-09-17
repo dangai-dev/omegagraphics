@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ModalComponent } from '../../layout/modal/modal.component';
-import { ModalAboutComponent } from '../../layout/modal-about/modal-about.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -14,10 +14,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(private modalService: NgbModal) { }
 
-  open() {
+  openLogin() {
     // const modalRef = this.modalService.open(ModalComponent);
-    const modalRef = this.modalService.open(ModalAboutComponent);
-    modalRef.componentInstance.title = 'About';
+    const modalRef = this.modalService.open(LoginModalComponent);
+    modalRef.componentInstance.title = 'Já tenho cadastro';
   }
 
   ngOnInit() {

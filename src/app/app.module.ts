@@ -13,8 +13,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ModalComponent } from './layout/modal/modal.component';
-import { AboutComponent } from './layout/about/about.component';
-import { ModalAboutComponent } from './layout/modal-about/modal-about.component';
+import { LoginModalComponent } from './components/header/login-modal/login-modal.component';
+import { FormLoginComponent } from './components/header/login-modal/form-login/form-login.component';
+import { FormCadastroComponent } from './components/header/login-modal/form-cadastro/form-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { ModalAboutComponent } from './layout/modal-about/modal-about.component'
     FooterComponent,
     HomeComponent,
     ModalComponent,
-    AboutComponent,
-    ModalAboutComponent,
+    LoginModalComponent,
+    FormLoginComponent,
+    FormCadastroComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { ModalAboutComponent } from './layout/modal-about/modal-about.component'
     AppMaterialModule,
   ],
   entryComponents: [
-    ModalAboutComponent
+    LoginModalComponent
   ],
   providers: [NgbActiveModal],
   bootstrap: [AppComponent]

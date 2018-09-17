@@ -17,9 +17,9 @@
         </li>
       </ul>
     </div>
-<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>
-
-  </div><nav class="navbar navbar-expand-lg navbar-light bg-white">
+  </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container">
     <a class="navbar-brand" href="#"><img src="../../../assets/img/OmegaGraphics.png" alt=""></a>
     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu"
@@ -39,8 +39,8 @@
         <li class="nav-item" ngbDropdown>
           <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdownId" ngbDropdownToggle><i class="material-icons align-text-top fs-large mr-1">account_circle</i>Minha conta</a>
           <div ngbDropdownMenu aria-labelledby="dropdownId" class="p-2">
-            <a name="" id="" class="btn btn-success d-block" href="javascript:void(0)" role="button" (click)="open(loginModal)">Entrar</a>
-            <span class="small">Não tem conta? <a href="javascript:void(0)" role="button" (click)="open(cadastroModal)">Cadastre-se aqui.</a></span>
+            <a name="" id="" class="btn btn-success d-block" [routerLink]="[{ outlets: { loginModal: ['entrar'] } }]" role="button" (click)="openLogin()">Entrar</a>
+            <span class="small">Não tem conta? <a role="button" [routerLink]="[{ outlets: { loginModal: ['cadastro'] } }]" (click)="openLogin()">Cadastre-se aqui.</a></span>
             <li class="dropdown-divider"></li>
             <div class="dropdown-item small"><i class="material-icons fs-normal align-text-top mr-1">help</i>Precisa de ajuda?</div>
           </div>
@@ -52,121 +52,3 @@
     </div>
   </div>
 </nav>
-<!-- 
-<ng-template #loginModal let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title text-center" id="modal-basic-title">Já tenho cadastro</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form action="">
-      <div class="form-group">
-        <label for="email"></label>
-        <input type="text" name="email" id="email" class="form-control" placeholder="E-mail">
-
-        <label for="senha"></label>
-        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
-        <p class="text-right">
-          <a href="#" class="small">Esqueci minha senha</a>
-        </p>
-      </div>
-      <div class="form-actions">
-        <button type="button" class="btn btn-success d-block w-100" role="button">Entrar</button>
-      </div>
-    </form>
-    <div class="row mt-4">
-      <p class="mx-auto">Não tem conta? <a href="javascript:void(0)" role="button" (click)="open(cadastroModal)">Cadastre-se aqui.</a></p>
-    </div>
-  </div>
-</ng-template>
-
-<ng-template #cadastroModal let-c="close" let-d="dismiss">
-    <div class="modal-header">
-      <h4 class="modal-title text-center" id="modal-basic-title">Quero me cadastrar</h4>
-      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <form action="">
-        <div class="d-flex flex-column">
-          <p class="form-text text-muted small mx-auto">Tipo de cadastro</p>
-          <div class="btn-group btn-group-toggle mx-auto" ngbRadioGroup name="radioGroupName" [(ngModel)]="model">
-            <label class="btn-light" ngbButtonLabel>
-              <input ngbButton type="radio" [value]="1"> Pessoa física
-            </label>
-            <label class="btn-light" ngbButtonLabel>
-              <input ngbButton type="radio" [value]="2"> Pessoa jurídica
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="nome"></label>
-              <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome*">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="sobrenome"></label>
-              <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="Sobrenome*">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="email"></label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="E-mail*">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="confirm-email"></label>
-              <input type="email" name="confirm-email" id="confirm-email" class="form-control" placeholder="Confirme seu e-mail*">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="cpf"></label>
-              <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF*">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="telefone"></label>
-              <input type="text" name="telefone" id="telefone" class="form-control" placeholder="Telefone*">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="senha"></label>
-              <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="sexo" class="form-text">Sexo</label>
-              <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="fem">
-                  <label class="form-check-label" for="inlineRadio1">Feminino</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="masc">
-                  <label class="form-check-label" for="inlineRadio2">Masculino</label>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-actions my-3">
-          <button type="button" class="btn btn-success d-block w-100" role="button">Cadastrar</button>
-          <p class="small text-center text-muted">Ao cadastrar você concorda com nossos Termos de Uso e nossa Política de Privacidade.</p>
-        </div>
-      </form>
-      <div class="row mt-4">
-        <p class="mx-auto">Já tem uma conta? <a href="#">Faça login aqui.</a></p>
-      </div>
-    </div>
-  </ng-template> -->
