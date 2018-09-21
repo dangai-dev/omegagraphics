@@ -1,5 +1,5 @@
 <section id="banner">
-  <div class="container">
+  <div class="container-fluid px-0">
     <ngb-carousel class="text-center">
       <ng-template ngbSlide>
         <img src="../../../assets/img/Slider.png" alt="Banner" class="img-fluid">
@@ -8,39 +8,55 @@
   </div>
 </section>
 
-<section id="produtos">
-  <div class="container">
-    <!-- <div class="row">
-      <div class="btn-group mx-auto my-3" data-toggle="buttons">
-        <label class="btn btn-light active">
-          <input type="radio" name="" id="" autocomplete="off" checked>
-          Mais vendidos
-        </label>
-        <label class="btn btn-light">
-          <input type="radio" name="" id="" autocomplete="off">
-          Lançamentos
-        </label>
-      </div>
-    </div> -->
-    <div class="row py-3">
-      <div class="col-md-2 px-2">
-        <div class="card">
-          <img src="https://via.placeholder.com/225x225" alt="" class="card-img-top">
-          <div class="card-body text-center">
-            <h6 class="card-title">Nome do produto</h6>
-            <p class="card-text">R$ 9,90</p>
+<section class="container" id="home-content">
+  <div class="row">
+    <div class="col-lg-11 mx-auto">
+      <!-- PRODUTOS -->
+      <section id="produtos">
+          <div class="row">
+            <div class="btn-group btn-group-toggle mx-auto mt-5 mb-4" ngbRadioGroup [(ngModel)]="model">
+              <label class="btn-light btn-sm active" ngbButtonLabel>
+                <input ngbButton type="radio" [value]="1"> Mais vendidos
+              </label>
+              <label class="btn-light btn-sm" ngbButtonLabel>
+                <input ngbButton type="radio" [value]="false"> Lançamentos
+              </label>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-2 px-2">
-        <div class="card">
-          <img src="https://via.placeholder.com/225x225" alt="" class="card-img-top">
-          <div class="card-body text-center">
-            <h6 class="card-title">Nome do produto</h6>
-            <p class="card-text">R$ 9,90</p>
+          <div class="row py-3">
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
           </div>
-        </div>
-      </div>
+          <div class="row py-3">
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <app-product-card></app-product-card>
+            </div>
+          </div>
+      </section>
+
+      <!-- BOXES -->
+      <section>
+
+      </section>
     </div>
   </div>
 </section>

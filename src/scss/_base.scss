@@ -1,14 +1,20 @@
+html {
+    font-size: 16px;
+    @include media-breakpoint-down(md) {
+        font-size: 15px;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+}
+
 body {
     font-family: 'Nunito', 'Helvetica', sans-serif;
 }
 
-.top-header {
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid $gray-100;
-    font-size: .75rem;
-    .nav-link {
-        color: $gray-500;
+a {
+    &:hover {
+        text-decoration: none;
     }
 }
 
@@ -17,14 +23,94 @@ body {
 .fs-normal { font-size: 1rem; }
 .fs-large { font-size: 1.25rem; }
 
-.btn {
-    border-radius: 25rem;
+hr.dashed {
+    border-top: 1px dashed $gray-200;
 }
 
-.footer {
-    width: 100%;
-    line-height: 60px;
-    a {
+.bg-g-my {
+    @include gradient-directional($pink, $yellow, 135deg);
+}
+.bg-g-cm {
+    @include gradient-directional($cyan, $pink, 135deg);
+}
+.bg-g-yc {
+    @include gradient-directional($yellow, $cyan, 135deg);
+}
+
+// Buttons
+.btn {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .15ch;
+    padding: .4rem 1.2rem;
+    white-space: normal;
+    @include border-radius(25rem);
+}
+
+[class*="btn-outline-"] {
+    border-width: 2px;
+}
+
+.btn-group {
+    text-transform: uppercase;
+    .btn {
+        padding-left: .75rem;
+        padding-right: .75rem;
+    }
+    .btn-light {
+        color: $gray-300;
+        border: 2px solid $gray-300;
+    }
+    .btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active {
         color: white;
+        background-color: $gray-300;
+        border-color: $gray-300;
     }
 }
+
+.breadcrumb {
+    font-size: .825rem;
+    padding: 1.75rem 0;
+}
+
+.badge {
+    width: auto;
+    padding: 0.25rem .5rem;
+    letter-spacing: .2ch;
+    text-transform: uppercase;
+    font-size: .65rem;
+    line-height: 1.2;
+    @include border-radius(1rem);
+}
+
+.box-content {
+    height: 100%;
+    background: white;
+    padding: 1rem;
+    h2, strong {
+        color: $dark;
+    }
+    p, h6 {
+        color: $gray-700;
+    }
+    .box-title {
+        font-weight: 600;
+        font-size: .9rem;
+        text-transform: uppercase;
+        letter-spacing: .1ch;
+        margin: .5rem 0;
+    }
+}
+
+.row + .row {
+    margin-top: 2rem;
+}
+
+// .hoverZoom {
+//     transition: .2s;
+//     z-index: 1;
+//     &:hover {
+//         transform: scale(1.05);
+//     }
+// }

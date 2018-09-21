@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ModalComponent } from '../../layout/modal/modal.component';
@@ -8,6 +8,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   providers: [NgbModal]
 })
 export class HeaderComponent implements OnInit {
