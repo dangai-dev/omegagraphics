@@ -18,6 +18,7 @@ import { ModalComponent } from './layout/modal/modal.component';
 import { LoginModalComponent } from './components/header/login-modal/login-modal.component';
 import { FormLoginComponent } from './components/header/login-modal/form-login/form-login.component';
 import { FormCadastroComponent } from './components/header/login-modal/form-cadastro/form-cadastro.component';
+import { HelpDeskComponent } from './components/help-desk/help-desk.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FormCadastroComponent } from './components/header/login-modal/form-cada
     LoginModalComponent,
     FormLoginComponent,
     FormCadastroComponent,
+    HelpDeskComponent,
   ],
   imports: [
     BrowserModule,

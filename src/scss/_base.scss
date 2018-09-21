@@ -27,13 +27,13 @@ hr.dashed {
     border-top: 1px dashed $gray-200;
 }
 
-.bg-g-my {
+%bg-g-my {
     @include gradient-directional($pink, $yellow, 135deg);
 }
-.bg-g-cm {
+%bg-g-cm {
     @include gradient-directional($cyan, $pink, 135deg);
 }
-.bg-g-yc {
+%bg-g-yc {
     @include gradient-directional($yellow, $cyan, 135deg);
 }
 

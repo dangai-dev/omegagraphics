@@ -1,0 +1,40 @@
+@import '../../../scss/_variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/bootstrap-grid';
+
+.help-desk {
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    a {
+        color: white;
+    }
+    @include gradient-directional($cyan, $pink, 135deg);
+    .help-option {
+        display: flex;
+        align-items: center;
+        .icon {
+            padding: .5rem;
+            .material-icons {
+                font-size: 2.125rem;
+            }
+            @include media-breakpoint-down(sm) {
+                flex: 0 0 36%;
+                max-width: 36%;
+                text-align: right;
+                margin-right: .5rem;
+            }
+        }
+        .text {
+            text-align: left;
+            p {
+                font-size: .75rem;
+                font-weight: 300;
+                margin-bottom: 0;
+            }
+            h4 {
+                font-size: 1.125rem;
+            }
+        }
+    }
+}
