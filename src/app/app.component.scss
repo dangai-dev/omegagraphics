@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-items: stretch;
-    height: 110vh;
+    height: 150vh;
 
     header, main, footer {
         flex-shrink: 0;
@@ -20,8 +20,7 @@
         z-index: 1;
     }
 
-    /deep/ router-outlet ~ .ng-animating {
-        position: absolute;
+    /deep/ router-outlet ~ * {
         width: 100%;
         height: 100%;
     }
