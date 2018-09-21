@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    height: 110vh;
+
+    header, main, footer {
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    main {
+        flex: 1;
+        flex-grow: 1;
+        position: relative;
+        z-index: 10;
+    }
+
+    footer {
+        z-index: 1;
+    }
+
+    /deep/ router-outlet ~ .ng-animating {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+}

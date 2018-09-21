@@ -1,0 +1,155 @@
+@import './../../../scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/bootstrap-grid';
+
+.product-info {
+    height: 100%;
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: .9rem;
+    .price-info {
+        margin-top: auto;
+        letter-spacing: 0.1ch;
+        small {
+            color: $gray-600;
+        }
+        .price {
+            color: $cyan;
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        .unit:before {
+            content: "/";
+            margin: 0 .5rem;
+        }
+    }
+}
+
+.product-details {
+    h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $dark;
+    }
+    p {
+        font-size: .9rem;
+    }
+}
+
+.rating {
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+    }
+    .stars {
+        direction: rtl;
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+        label {
+            cursor: pointer;
+            margin: 0;
+        }
+        .fa {
+            font-size: 2rem;
+            padding: .3rem;
+            &.fa-star {
+                color: $yellow;
+                text-shadow: 0 0 5px $yellow;
+            }
+            &.fa-star-o {
+                color: $gray-300;
+            }
+        }
+        &.small {
+            .fa {
+                font-size: 1rem;
+            }
+        }
+        input:not(:checked)~label:not([for="rating-1"])>.fa-star {
+            display: none;
+        }
+        label:hover>.fa-star-o,
+        label:hover~label>.fa-star-o,
+        input:checked~label>.fa-star-o {
+            display: none;
+        }
+        label:hover>.fa-star,
+        label:hover~label>.fa-star,
+        input:checked~label>.fa-star {
+            display: inline-block !important;
+        }
+    }
+    .total-rate {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 1rem;
+        margin-left: .5rem;
+        &:after {
+            content: " / 5";
+            font-size: 1rem;
+            font-weight: 400;
+            color: $gray-700;
+            vertical-align: middle;
+        }
+    }
+    .total-ratings {
+        color: $gray-600;
+        font-size: .8rem;
+    }
+}
+
+.comments {
+    .user-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $dark;
+        .comment-date {
+            font-size: .75rem;
+            color: $gray-300;
+            float: right;
+        }
+    }
+    .user-comment {
+        font-size: .875rem;
+    }
+}
+
+.write-review {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .collapse {
+        display: block;
+        height: 0;
+        transform: translateY(100%);
+        transition: all 0.5s cubic-bezier(.45,0.2,.2,1.35);
+        &.show {
+            height: 100%;
+            transform: translateY(0px);
+            .card {
+                margin-top: -1.75rem;
+            }
+        }
+    }
+    .btn[aria-expanded="true"] {
+        position: relative;
+        z-index: 99;
+        &:not(:hover) {
+            background: white;
+        }
+        @include box-shadow(0 0 5px rgba(60, 60, 60, .2));
+    }
+    .card {
+        border: 1px dashed $gray-200;
+        background: $gray-100;
+        @include media-breakpoint-up(md) {
+            .form-group .col-form-label {
+                text-align: right;
+            }
+        }
+        .rating .stars .fa {
+            font-size: 1.5rem;
+        }
+    }
+}

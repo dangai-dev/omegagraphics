@@ -1,0 +1,65 @@
+@import './../../../../scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.product-card {
+    margin-bottom: 1.5rem;
+    .card {
+        transition: all 0.2s ease-in-out;
+        border: none;
+        @include box-shadow(0 0.25rem 2.5rem rgba(0, 0, 0, 0.2));
+    }
+    .card-img-top {
+        position: relative;
+        overflow: hidden;
+    }
+    .cta {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        background: rgba(255, 255, 255, 0.7);
+        transition: all 0.2s ease-in-out;
+        .btn {
+            margin: auto;
+            transform: translateY(90px);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .card-body {
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+    }
+    .card:hover {
+        transform:scale(1.02);
+        .cta {
+            opacity: 1;
+            z-index: 10;
+            .btn {
+                transform: translateY(0);
+            }
+        }
+        .card-body {
+            opacity: .5;
+        }
+    }
+    .card-body {
+        .card-title {
+            color: $body-color;
+            font-weight: 700;
+            letter-spacing: .05ch;
+        }
+        .card-text {
+            font-weight: 600;
+            color: $primary;
+            small {
+                color: $gray-500;
+                font-size: .75rem;
+                font-weight: 400;
+                display: block;
+            }
+        }
+    }
+}

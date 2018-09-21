@@ -1,3 +1,180 @@
-<p>
-  product works!
-</p>
+<section class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Categoria</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Produto</li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-lg-5 order-lg-first">
+      <div class="box-content">
+        <div class="product-info">
+          <div class="tag">
+            <a href="">
+              <span class="badge badge-primary mb-4">Mais vendidos</span>
+            </a>
+          </div>
+          <h2>
+            Etiquetas
+          </h2>
+          <p class="fs-small font-italic mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p>
+            <strong>Descrição:</strong>
+            In the tumultuous business of cutting-in and attending to a whale, there is much running backwards and forwards among the crew. Now hands are wanted here, and then again hands are wanted there.
+          </p>
+          <div class="price-info">
+            <small class="d-block">A partir de</small>
+            <span class="price">R$ 50,00</span>
+            <small class="unit">100 un.</small>
+          </div>
+          <div class="cta my-2">
+            <a name="" id="" class="btn btn-success" href="#" role="button">Configurar este produto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 order-first">
+      <div class="box-content">
+        <img src="https://imgplaceholder.com/640x480/e8e8e8/d6d4d5/fa-photo" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mb-4">
+      <div class="box-content">
+        <h6 class="box-title">Avaliações</h6>
+        <div class="rating d-flex align-items-center">
+          <div class="stars">
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <span class="total-rate">4</span>
+          <span class="total-ratings ml-sm-auto">1 avaliação</span>
+        </div>
+        <hr class="dashed">
+        <div class="comments">
+          <div class="media">
+              <img class="align-self-start mr-3 rounded-circle" src="https://imgplaceholder.com/50x50/e8e8e8/d6d4d5/fa-user" alt="Generic placeholder image">
+              <div class="media-body">
+                <h6 class="user-name my-1">
+                  Nome do Usuário
+                  <span class="comment-date">10 de abril</span>
+                </h6>
+                <div class="rating mb-2">
+                  <div class="stars small">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </div>
+                </div>
+                <p class="user-comment">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+              </div>
+            </div>
+            <hr class="dashed">
+        </div>
+        <div class="write-review">
+          <button class="btn btn-outline-warning mx-auto mt-1 mb-3" role="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="writeReview">Escrever avaliação</button>
+          <div id="writeReview" [ngbCollapse]="isCollapsed">
+            <div class="card">
+              <div class="card-body mt-3">
+                <form action="">
+                  <div class="form-group row">
+                    <label for="rating" class="col-md-4 col-form-label text-md-right text-center">Sua avaliação:</label>
+                    <div class="col-md-8">
+                      <div class="rating">
+                        <div class="stars text-md-left text-center">
+                          <input type="radio" name="rating" id="rating-5" hidden>
+                          <label for="rating-5">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                          </label>
+                          <input type="radio" name="rating" id="rating-4" hidden>
+                          <label for="rating-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                          </label>
+                          <input type="radio" name="rating" id="rating-3" hidden>
+                          <label for="rating-3">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                          </label>
+                          <input type="radio" name="rating" id="rating-2" hidden>
+                          <label for="rating-2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                          </label>
+                          <input type="radio" name="rating" id="rating-1" hidden checked>
+                          <label for="rating-1">
+                            <i class="fa fa-star"></i>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="comment" class="col-md-4 col-form-label">Seu comentário:</label>
+                    <div class="col-md-8">
+                      <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label">Seu nome:</label>
+                    <div class="col-md-8">
+                      <input type="text" name="name" id="name" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="email" class="col-md-4 col-form-label">Seu e-mail:</label>
+                    <div class="col-md-8">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-actions d-flex justify-content-end py-3">
+                    <a role="button" (click)="isCollapsed = !isCollapsed" class="btn-link text-muted small p-2">cancelar</a>
+                    <button type="submit" class="btn btn-success">Publicar!</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="box-content h-auto">
+          <h6 class="box-title">Veja também</h6>
+          <div class="row my-4">
+            <div class="col-6">
+              <app-product-card></app-product-card>
+            </div>
+            <div class="col-6">
+              <app-product-card></app-product-card>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-lg-12">
+      <div class="box-content">
+        <h6 class="box-title">Detalhes do produto</h6>
+        <div class="product-details">
+          <h5 class="mt-4">Imprima suas etiquetas</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, atque omnis sit magnam nobis maxime placeat. Illo voluptatibus, magni culpa consequatur distinctio voluptate in dolor quo optio, natus laboriosam deleniti.</p>
+          <h5>A melhor qualidade</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit optio expedita blanditiis nulla? Autem porro molestiae id odio quos debitis nihil voluptatem, aut, sequi a neque? Est vel quibusdam aliquam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
