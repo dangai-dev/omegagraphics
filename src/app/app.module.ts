@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppMaterialModule} from './material/app-material.module';
+import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { HelpDeskComponent } from './components/help-desk/help-desk.component';
     NgbModule.forRoot(),
     BrowserAnimationsModule,
     AppMaterialModule,
+    PasswordStrengthMeterModule,
   ],
   entryComponents: [
     LoginModalComponent
