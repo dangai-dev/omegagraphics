@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { ProductComponent } from './components/product/product.component';
-import { LoginModalComponent } from './components/header/login-modal/login-modal.component';
-import { FormLoginComponent } from './components/header/login-modal/form-login/form-login.component';
-import { FormCadastroComponent } from './components/header/login-modal/form-cadastro/form-cadastro.component';
+import { HomeComponent } from './modules/home/home.component';
+import { ProductComponent } from './modules/product/product.component';
+import { LoginModalComponent } from './modules/header/login-modal/login-modal.component';
+import { FormLoginComponent } from './modules/header/login-modal/form-login/form-login.component';
+import { FormCadastroComponent } from './modules/header/login-modal/form-cadastro/form-cadastro.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

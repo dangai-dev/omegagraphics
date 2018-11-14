@@ -11,53 +11,52 @@
     </label>
   </div>
 </div>
-<form action="" #usersForm="ngForm" (ngSubmit)="onSubmit(usersForm)" >
+<form>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <input type="text" name="first_name" id="nome" class="form-control" placeholder="Nome*" ngModel>
+          <input type="text" name="first_name" id="nome" class="form-control" placeholder="Nome*">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <input type="text" name="last_name" id="sobrenome" class="form-control" placeholder="Sobrenome*" ngModel>
+          <input type="text" name="last_name" id="sobrenome" class="form-control" placeholder="Sobrenome*">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <input type="email" name="email" id="email" class="form-control" placeholder="E-mail*" ngModel>
+          <input type="email" name="email" id="email" class="form-control" placeholder="E-mail*">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <input type="email" name="confirm-email" id="confirm-email" class="form-control" placeholder="Confirme seu e-mail*" ngModel>
+          <input type="email" name="confirm-email" id="confirm-email" class="form-control" placeholder="Confirme seu e-mail*">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF*" ngModel>
+          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF*">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <input type="text" name="phone" id="telefone" class="form-control" placeholder="Telefone*" ngModel>
+          <input type="text" name="phone" id="telefone" class="form-control" placeholder="Telefone*">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <input type="password" name="password" id="senha" class="form-control ok-password" placeholder="Senha" ngModel="password" ng-required="true">
-          <!-- <password-strength-meter [password]="password"></password-strength-meter> -->
+          <input type="password" name="password" id="senha" class="form-control ok-password" placeholder="Senha">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label for="sexo" class="form-text small">Sexo</label>
           <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="fem" ngModel>
+              <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="fem">
               <label class="form-check-label" for="inlineRadio1">Feminino</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="masc" ngModel>
+              <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="masc">
               <label class="form-check-label" for="inlineRadio2">Masculino</label>
             </div>
         </div>
