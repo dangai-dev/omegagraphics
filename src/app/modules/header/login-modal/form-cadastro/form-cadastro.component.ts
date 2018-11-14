@@ -2,7 +2,6 @@ import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { FormCadastroService } from './form-cadastro.service';
 import { User } from './user';
-import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 
 @Component({
   selector: 'app-form-cadastro',
@@ -15,7 +14,10 @@ export class FormCadastroComponent implements OnInit {
   model = 1;
   users: User[];
 
-  constructor(private userService: FormCadastroService, private form: FormsModule, private passwordstr: PasswordStrengthMeterModule) { }
+  constructor(
+    private userService: FormCadastroService,
+    private form: FormsModule
+  ) { }
 
   ngOnInit() {
   // this.userService.getUsers().subscribe(console.log);

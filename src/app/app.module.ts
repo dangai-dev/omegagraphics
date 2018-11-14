@@ -6,20 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppMaterialModule} from './material/app-material.module';
-import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
+// import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductCardComponent } from './components/product/product-card/product-card.component';
-import { ModalComponent } from './layout/modal/modal.component';
-import { LoginModalComponent } from './components/header/login-modal/login-modal.component';
-import { FormLoginComponent } from './components/header/login-modal/form-login/form-login.component';
-import { FormCadastroComponent } from './components/header/login-modal/form-cadastro/form-cadastro.component';
-import { HelpDeskComponent } from './components/help-desk/help-desk.component';
+import { HeaderComponent } from './modules/header/header.component';
+import { FooterComponent } from './modules/footer/footer.component';
+import { HomeComponent } from './modules/home/home.component';
+import { ProductComponent } from './modules/product/product.component';
+import { ProductCardComponent } from './modules/product/product-card/product-card.component';
+import { HelpDeskComponent } from './modules/help-desk/help-desk.component';
+import { HeaderModule } from './modules/header/header.module';
 
 @NgModule({
   declarations: [
@@ -29,11 +26,7 @@ import { HelpDeskComponent } from './components/help-desk/help-desk.component';
     HomeComponent,
     ProductComponent,
     ProductCardComponent,
-    ModalComponent,
-    LoginModalComponent,
-    FormLoginComponent,
-    FormCadastroComponent,
-    HelpDeskComponent,
+    HelpDeskComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +36,7 @@ import { HelpDeskComponent } from './components/help-desk/help-desk.component';
     NgbModule.forRoot(),
     BrowserAnimationsModule,
     AppMaterialModule,
-    PasswordStrengthMeterModule,
-  ],
-  entryComponents: [
-    LoginModalComponent
+    HeaderModule
   ],
   providers: [NgbActiveModal],
   bootstrap: [AppComponent]
